@@ -9,7 +9,7 @@
         <title>UNA-Guía - Aulas</title>
 
         <!-- CSS -->
-        <
+        
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
         
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -34,10 +34,9 @@
 
     </head>
 
-    <body ng-app="myApp" ng-controller="InicioCtrl">
+    <body ng-app="myApp" ng-controller="CtrlAu">
 
-        <!-- Top menu -->
-	<!-- Top menu -->
+
 		<nav class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-header" style='padding-top: 7.5%; padding-left: -3%'>
@@ -47,7 +46,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                                    <a class="navbar-brand" href="index.html">UNA-Guía</a>
+                    <a class="navbar-brand" href="index.html">UNA-Guía</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -74,19 +73,20 @@
 				</div>
 			</div>
 		</nav>
-        <!-- Portfolio -->
-        <div class="portfolio-container" ng-controller="AulaCtrl">
+
+        <div class="portfolio-container">
 	        <div class="container">
 	            <div class="col-sm-3 footer-box wow fadeInDown">
                         <h4>Buscar un aula</h4>
                         <div class="footer-box-text footer-box-text-subscribe">
-                        	<p>Ingrese el numero de aula a buscar:</p>
-                        	<form role="form" action="assets/subscribe.php" method="post">
+                        	<p></p>
+                        	<form role="form">
 		                    	<div class="form-group">
-		                    		<label class="sr-only" for="subscribe-email">Email address</label>
-		                        	<input ng-model="aulaSeleccionada" type="text" name="email" placeholder="Identificador de aula" class="subscribe-email" id="subscribe-email">
+		                    		<label class="sr-only" for="subscribe-email">Aula:</label>
+		                        	<input ng-model="aulaSeleccionada" type="text" name="aulaSeleccionada" 
+										   placeholder="Ingrese el numero de aula" class="subscribe-email" id="subscribe-email">
 		                        </div>
-		                        <button ng-click="buscarAula(aulaSeleccionada)" class="btn">Buscar</button>
+		                        <button ng-click="buscarAula()" class="btn">Buscar</button>
 		                    </form>
 		                    <p class="success-message"></p>
 		                    <p class="error-message"></p>
@@ -95,6 +95,10 @@
 	        </div>
         </div>
         <!-- Javascript -->
+		
+	   <script src="assets/js/angular/App.js"></script>
+        <script src="assets/js/angular/Aula.js"></script>
+		
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
@@ -107,8 +111,7 @@
         <script src="assets/js/masonry.pkgd.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="assets/js/jquery.ui.map.min.js"></script>
-         <script src="assets/js/angular/App.js"></script>
-        <script src="assets/js/angular/Aula.js"></script>
+
         <script src="assets/js/scripts.js"></script>
 
     </body>
