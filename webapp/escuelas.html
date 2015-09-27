@@ -6,12 +6,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UNA-Guía - Aulas</title>
+        <title>UNA-Guía - Facultades</title>
 
         <!-- CSS -->
         
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
@@ -20,10 +22,13 @@
         <link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/media-queries.css">
-        
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.ico">
@@ -34,19 +39,19 @@
 
     </head>
 
-    <body ng-app="myApp" ng-controller="CtrlAu">
+    <body ng-app="myApp" ng-controller="EscuelaCtrl">
 
-
+        <!-- Top menu -->
 		<nav class="navbar" role="navigation">
 			<div class="container">
-				<div class="navbar-header" style='padding-top: 7.5%; padding-left: -3%'>
+				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                    <a class="navbar-brand" href="index.html">UNA-Guía</a>
+					<a class="navbar-brand" href="index.html">Andia - a super cool design agency...</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -73,44 +78,47 @@
 				</div>
 			</div>
 		</nav>
-		<!-- Page Title -->
+
+        <!-- Page Title -->
         <div class="page-title-container">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 wow fadeIn">
-                        <i class="fa fa-search"></i>
-                        <h1>Buscador de Aulas</h1>
+                        <i class="fa fa-graduation-cap"></i>
+                        <h1>Buscador de Escuelas</h1>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="portfolio-container">
-	        <div class="container">
+        <div class="services-full-width-container">
+        	<div class="container">
 	            <div class="col-sm-3 footer-box wow fadeInDown">
+                        <h4>Buscar una escuela</h4>
                         <div class="footer-box-text footer-box-text-subscribe">
                         	<p></p>
                         	<form role="form">
 		                    	<div class="form-group">
-		                    		<label class="sr-only" for="subscribe-email">Aula:</label>
-		                        	<input ng-model="aulaSeleccionada" type="text" name="aulaSeleccionada" 
-										   placeholder="Ingrese el numero de aula" class="subscribe-email" id="subscribe-email">
+		                        	<input ng-model="escuelaBuscada" type="text" name="escuelaBuscada" 
+										   placeholder="Ingrese el nombre de la escuela" class="subscribe-email" id="subscribe-email">
 		                        </div>
-		                        <button ng-click="buscarAula()" class="btn">Buscar</button>
+		                        <button ng-click="buscarEscuela()" class="btn">Buscar</button>
 		                    </form>
 		                    <p class="success-message"></p>
 		                    <p class="error-message"></p>
                         </div>
-                    </div>
-	        </div>
+                </div>
         </div>
-		<!-- Services -->
-        <div class="services-container" ng-hide="direccionSeleccionada === ''">
+
+        <!-- Services -->
+        <div class="services-container" ng-hide="escuelaEncontrada === ''">
 	        <div class="container">
 	            <div class="row">
 	            	<div class="col-sm-3">
 		                <div class="service wow fadeInUp">
-		                    <h3>Aula: {{ aulaSeleccionada }}</h3>
-							<p>Direccion: {{ direccionSeleccionada }}</a></p>
+		                    <img src="{{ escuelaEncontrada.img }}" alt="" data-at2x="assets/img/team/1.jpg">
+		                    <h3>{{ escuelaEncontrada.nombre }}</h3>
+		                    <p>Telefono: {{ escuelaEncontrada.telefono }}</p>
+							<p>Website: <a href="{{ escuelaEncontrada.website }}">{{ escuelaEncontrada.website }}</a></p>
 		                </div>
 					</div>
 	            </div>
@@ -128,9 +136,11 @@
             </div>
         </footer>
         <!-- Javascript -->
+
+       <!-- Javascript -->
 		
 	    <script src="assets/js/angular/App.js"></script>
-        <script src="assets/js/angular/Aula.js"></script>
+        <script src="assets/js/angular/EscuelasCtrl.js"></script>
 		
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -146,6 +156,7 @@
         <script src="assets/js/jquery.ui.map.min.js"></script>
 
         <script src="assets/js/scripts.js"></script>
+
 
     </body>
 

@@ -46,7 +46,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                                    <a class="navbar-brand" href="index.html">UNA-Guía</a>
+                            <a class="navbar-brand" href="index.html">UNA-Guía</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -58,7 +58,7 @@
 							<a href="buscaAula.html"><i class="fa fa-search"></i><br>Buscar Aula</a>
 						</li>
 						<li>
-							<a href="services.html"><i class="fa fa-tasks"></i><br>Escuelas</a>
+							<a href="escuelas.html"><i class="fa fa-tasks"></i><br>Escuelas</a>
 						</li>
                                                 <li>
 							<a href="services.html"><i class="fa fa-book"></i><br>Bibliotecas y CI</a>
@@ -67,7 +67,7 @@
 							<a href="services.html"><i class="fa fa-cutlery"></i><br>Sodas y Copiadoras</a>
 						</li>
 						<li>
-							<a href="about.html"><i class="fa fa-user"></i><br>Acerca</a>
+							<a href="acerca.html"><i class="fa fa-user"></i><br>Acerca</a>
 						</li>
 					</ul>
 				</div>
@@ -83,14 +83,15 @@
             </div>
         	<div class="container">
         		<div class="row">
-	        		<div class="col-sm-12 wow fadeInLeftBig">
-	            		<p>{{ campus }}</p>
-                                <select ng-model="campus" bs-selectbox>
+	        		<div class="col-sm-12 wow">
+	            		<p></p>
+                                <select class="form-control" style="width:65%; margin: auto" ng-model="campus" bs-selectbox>
                                     <option ng-repeat=" sede in campusDisponibles " value="{{sede.nombre}}">{{sede.nombre}}</option>
                                 </select>
-                                <p> </p>
-                                <p ng-hide=" 'Seleccione el campus' == campus" style='padding-bottom: 25%'>Listo! ha seleccionado el campus preferido.</p>
-                                <p></p>
+								<span style='padding-top: 10%'></span>
+                                <p  ng-hide=" 'Seleccione el campus' == campus" 
+								   style='padding-bottom: 25%;padding-top: 10%'>Listo! ha seleccionado el campus {{ campus }}.</p>
+                                <span padding-left: 10%></span>
 	            	</div>
             	</div>
         	</div>

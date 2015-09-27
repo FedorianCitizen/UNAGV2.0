@@ -11,6 +11,7 @@ app.controller('CtrlAu',['$scope', function($scope){
         ]; 
 	
         $scope.buscarAula = function(){
+			$scope.direccionSeleccionada = '';
 		   var temp;
            for (temp of $scope.aulasDisponibles) {
     			if(temp.id === $scope.aulaSeleccionada)
@@ -19,7 +20,9 @@ app.controller('CtrlAu',['$scope', function($scope){
 			if($scope.direccionSeleccionada === '')
 				$scope.direccionSeleccionada = 'Aula no encontrada';
         };
-        
+        $scope.$watch("aulaSeleccionada", function() {
+     		buscarAula();
+  		});
 }]);
 
 
