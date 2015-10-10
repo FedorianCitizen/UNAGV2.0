@@ -1,16 +1,11 @@
 app.controller('BiblioCICtrl',['$scope', function($scope){
         $scope.campus = sessionStorage.getItem('campus');
-    
-		/* 
-				MARGUITH
-		Use los cuadritos que estan en  services.html para desplegar la info de las biblios y CI.
-		Cada una en HTML aparte, haga las interfaces iguales a Escuelas pero adaptadas a este controler 
-		y esta info.
-		*/
+	
+	
 	
 		$scope.mostrarTodoCI = false;
 		$scope.CIBuscado = "";
-		$scope.CIencontrado= {};
+		$scope.CIencontrado= null;
 	
 		$scope.busquedaCI = function(){
 			var index;
@@ -22,15 +17,30 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 			 	index = 1;
         
 		 for (temp of $scope.campusDisponibles[index].CI) {
-    		if(temp.nombre.indexOf($scope.CIBuscado) > 0)
+    		if(temp.nombre.match($scope.CIBuscado))
                $scope.CIencontrado = temp;
 		 }
-		}
+		};
 		
-		
+	
+	
+		$scope.biblios = {};
 		$scope.mostrarTodoBiblio = false;
 		$scope.BiblioBuscada = "";
-		$scope.BiblioEncontrada= {};
+		$scope.BiblioEncontrada= null;
+	
+		$scope.devuelveBiblios = function(){
+			var index;
+			var temp;
+		 
+		 	if($scope.campus === 'Omar Dengo')
+				 index = 0;
+		 	else 
+			 	index = 1;
+			
+			$scope.index = index;
+			$scope.lista = $scope.campusDisponibles[index].Bibliotecas;
+		};
 	
 		$scope.busquedaBiblio = function(){
 			var index;
@@ -40,14 +50,23 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 				 index = 0;
 		 	else 
 			 	index = 1;
+			
+			$scope.index = index;
         
 		 for (temp of $scope.campusDisponibles[index].Bibliotecas) {
-    		if(temp.nombre.indexOf($scope.BiblioBuscada) > 0)
+			 if(temp.nombre.match($scope.BiblioBuscada))
                $scope.BiblioEncontrada = temp;
 		 }
-		}
+			console.log($scope.BiblioEncontrada);
+		};
 		
+		$scope.listadoBiblios = function(){
+			$scope.mostrarTodoBiblio = true;
+			$scope.BiblioEncontrada = null;
+		};
 	
+		$scope.mostrarTodoBiblio = false;
+		
         $scope.campusDisponibles = [
             {
                 nombre: 'Omar Dengo',
@@ -139,7 +158,7 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 					horario: "L-V 8am a 9pm, S 8am a 5pm"
 					}
 				]
-            }
+            },
 			{
                 nombre: 'Benjamin Nunez',
                 CI: [
