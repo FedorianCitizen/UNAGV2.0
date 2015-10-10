@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>UNA-Guía - Inicio</title>
+        <title>UNA-Guía - Bibliotecas</title>
 
         <!-- CSS -->
         
@@ -34,19 +34,19 @@
 
     </head>
 
-    <body ng-app="myApp" ng-controller="InicioCtrl">
-        
-        <!-- Top menu -->
+    <body ng-app="myApp" ng-controller="CtrlAu">
+
+
 		<nav class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-header" style='padding-top: 7.5%; padding-left: -3%'>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1" ng-hide="'Seleccione el campus' == campus">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                            <a class="navbar-brand" href="index.html">UNA-Guía</a>
+                    <a class="navbar-brand" href="index.html">UNA-Guía</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -84,31 +84,66 @@
 				</div>
 			</div>
 		</nav>
-        <!-- Seleccion de campus -->
-        <div class="presentation-container">
+		<!-- Page Title -->
+        <div class="page-title-container">
             <div class="container">
                 <div class="row">
-                    <h1>Bienvenido a UNA-Guía</h1>
+                    <div class="col-sm-12 wow fadeIn">
+                        <i class="fa fa-search"></i>
+                        <h1>Buscador de Bibliotecas</h1>
+                    </div>
                 </div>
-                    
             </div>
-        	<div class="container">
-        		<div class="row">
-	        		<div class="col-sm-12 wow">
-	            		<p></p>
-                                <select class="form-control" style="width:65%; margin: auto" ng-model="campus" bs-selectbox>
-                                    <option ng-repeat=" sede in campusDisponibles " value="{{sede.nombre}}">{{sede.nombre}}</option>
-                                </select>
-								<span style='padding-top: 10%'></span>
-                                <p  ng-hide=" 'Seleccione el campus' == campus" 
-								   style='padding-bottom: 25%;padding-top: 10%'>Listo! ha seleccionado el campus {{ campus }}.</p>
-                                <span padding-left: 10%></span>
-	            	</div>
-            	</div>
-        	</div>
         </div>
-
+        <div class="portfolio-container">
+	        <div class="container">
+	            <div class="col-sm-3 footer-box wow fadeInDown">
+                        <div class="footer-box-text footer-box-text-subscribe">
+                        	<p></p>
+                        	<form role="form">
+		                    	<div class="form-group">
+		                    		<label class="sr-only" for="subscribe-email">Biblioteca:</label>
+		                        	<input ng-model="bibliotecaSeleccionada" type="text" name="bibliotecaSeleccionada" 
+										   placeholder="Ingrese el nombre de la Biblioteca" class="subscribe-email" id="subscribe-email">
+		                        </div>
+		                        <button ng-click="buscarBiblio()" class="btn">Buscar</button>
+								<button ng-click="buscarBiblioTotal()" class="btn">Mostrar Listado</button>
+		                    </form>
+		                    <p class="success-message"></p>
+		                    <p class="error-message"></p>
+                        </div>
+                    </div>
+	        </div>
+        </div>
+		<!-- Services -->
+        <div class="services-container" ng-hide="direccionSeleccionada === ''">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-sm-3">
+		                <div class="service wow fadeInUp">
+		                    <h3>Biblioteca: {{ bibliotecaSeleccionada }}</h3>
+							<p>Direccion: {{ direccionSeleccionada }}</a></p>
+		                </div>
+					</div>
+	            </div>
+	        </div>
+        </div>
+		<!-- Footer -->
+        <footer>
+            <div class="container">
+             
+                <div class="row">
+                    <div class="col-sm-7 footer-copyright wow fadeIn">
+                        <p>Copyright 2015 UNA-Guía - Todos los derechos reservados. <a href="http://www.una.ac.cr">UNA</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- Javascript -->
+		
+	    <script src="assets/js/angular/App.js"></script>
+        <script src="assets/js/angular/Aula.js"></script>
+		
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
@@ -121,11 +156,8 @@
         <script src="assets/js/masonry.pkgd.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="assets/js/jquery.ui.map.min.js"></script>
-        
-        <script src="assets/js/angular/App.js"></script>
-        <script src="assets/js/angular/InicioCtrl.js"></script>
+
         <script src="assets/js/scripts.js"></script>
-       
 
     </body>
 
