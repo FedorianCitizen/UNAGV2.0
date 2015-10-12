@@ -1,6 +1,49 @@
 app.controller('CopiSodasCtrl',['$scope', function($scope){
         $scope.campus = sessionStorage.getItem('campus');
-    
+		$scope.mostrarSodas = false;
+		$scope.direccionSeleccionada = '';
+		$scope.sodaSeleccionada= '';
+		$scope.CopySeleccionada= '';
+		
+		$scope.buscarSoda = function(){
+			var index;
+			var temp;
+		 	if($scope.campus === 'Benjamin Nunez')
+				 index = 0;
+		 	else 
+			 	index = 1;
+			
+			for (temp of $scope.campusDisponibles[index].sodas){
+				if(temp.nombre.match($scope.CopySeleccionada))
+					$scope.direccionSeleccionada = temp;
+			}
+			if($scope.direccionSeleccionada === '')
+				$scope.direccionSeleccionada = 'Soda no encontrada';
+		};
+		$scope.$watch("CopySeleccionada", function() {
+     		buscarSoda();
+  		});
+		
+		$scope.buscarCopy = function(){
+			var index;
+			var temp;
+		 	if($scope.campus === 'Benjamin Nunez')
+				 index = 0;
+		 	else 
+			 	index = 1;
+			
+			for (temp of $scope.campusDisponibles[index].copiadoras){
+				if(temp.nombre.match($scope.CopySeleccionada))
+					$scope.direccionSeleccionada = temp;
+			}
+			if($scope.direccionSeleccionada === '')
+				$scope.direccionSeleccionada = 'Copiadora no encontrada';
+		};
+		$scope.$watch("CopySeleccionada", function() {
+     		buscarCopy();
+  		});
+		
+	
 		/* 
 			EDGAR
 		Use los cuadritos que estan en  services.html para desplegar la info de las sodas

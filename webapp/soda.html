@@ -34,7 +34,7 @@
 
     </head>
 
-    <body ng-app="myApp" ng-controller="CtrlAu">
+    <body ng-app="myApp" ng-controller="CopiSodasCtrl">
 
 
 		<nav class="navbar" role="navigation">
@@ -121,8 +121,9 @@
 	            <div class="row">
 	            	<div class="col-sm-3">
 		                <div class="service wow fadeInUp">
-		                    <h3>Soda: {{ sodaSeleccionada }}</h3>
-							<p>Direccion: {{ direccionSeleccionada }}</a></p>
+		                    <h3>Soda: {{ direccionSeleccionada.nombre }}</h3>
+							<p>Direccion: {{ direccionSeleccionada.ubicacion }}</a></p>
+							<p>Horario: {{ direccionSeleccionada.horario }}</p>
 		                </div>
 					</div>
 	            </div>
@@ -142,7 +143,7 @@
         <!-- Javascript -->
 		
 	    <script src="assets/js/angular/App.js"></script>
-        <script src="assets/js/angular/Aula.js"></script>
+        <script src="assets/js/angular/CopiSodas.js"></script>
 		
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
