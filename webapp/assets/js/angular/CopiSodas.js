@@ -8,26 +8,23 @@ app.controller('CopiSodasCtrl',['$scope', function($scope){
 		$scope.buscarSoda = function(){
 			var index;
 			var temp;
-		 	if($scope.campus === 'Benjamin Nunez')
+		 	if($scope.campus === 'Benjamín Nuñez')
 				 index = 0;
 		 	else 
 			 	index = 1;
 			
 			for (temp of $scope.campusDisponibles[index].sodas){
-				if(temp.nombre.match($scope.CopySeleccionada))
+				if(temp.nombre.match($scope.sodaSeleccionada))
 					$scope.direccionSeleccionada = temp;
 			}
 			if($scope.direccionSeleccionada === '')
 				$scope.direccionSeleccionada = 'Soda no encontrada';
 		};
-		$scope.$watch("CopySeleccionada", function() {
-     		buscarSoda();
-  		});
-		
+	
 		$scope.buscarCopy = function(){
 			var index;
 			var temp;
-		 	if($scope.campus === 'Benjamin Nunez')
+		 	if($scope.campus === 'Benjamín Nuñez')
 				 index = 0;
 		 	else 
 			 	index = 1;
@@ -39,25 +36,15 @@ app.controller('CopiSodasCtrl',['$scope', function($scope){
 			if($scope.direccionSeleccionada === '')
 				$scope.direccionSeleccionada = 'Copiadora no encontrada';
 		};
-		$scope.$watch("CopySeleccionada", function() {
-     		buscarCopy();
-  		});
-		
-	
-		/* 
-			EDGAR
-		Use los cuadritos que estan en  services.html para desplegar la info de las sodas
-		y en otro html despliega la de copiadoras, ambas interfaces separas y en la barrita de nav agregue los link
-		a los archivos html*/
 	
         $scope.campusDisponibles = [
             {
                 nombre: 'Benjamin Nunez',
                 sodas: [
 					{
-					nombre: "Soda de Informatica",
+					nombre: "Soda de Informática",
 					horario: " M - V de 8am a 4pm",
-					ubicacion: "2do piso, Escuela de Informatica; Contiguo a la asociacion de estudiantes"
+					ubicacion: "2do piso, Escuela de Informática; Contiguo a la asociación de estudiantes"
 					},
 					{
 					nombre: "Soda de Deportes",
@@ -81,19 +68,19 @@ app.controller('CopiSodasCtrl',['$scope', function($scope){
 					horario: "L-V de 7am a 7pm, S de 8am a 2pm",
 					ubicacion: "Frente al parqueo de Generales"},
 					{
-					nombre: "Soda Biologia",
+					nombre: "Soda Biología",
 					horario: "L-V de 7am a 7pm, S de 8am a 1pm",
-					ubicacion: "200m Norte de la entrada del parqueo de Biologia"
+					ubicacion: "200m Norte de la entrada del parqueo de Biología"
 					},
 					{
 					nombre: "Soda Agrarias",
 					horario: "L-V de 7am a 7pm, S de 8am a 2pm",
-					ubicacion: "200m Este y 50m Norte de la biblioteca Joaquin Garcia"
+					ubicacion: "200m Este y 50m Norte de la biblioteca Joaquín García"
 					},
 					{
 					nombre: "Soda CIDE",
 					horario: "L-V de 7am a 7pm, S de 8am a 4pm",
-					ubicacion: "Edificio CIDE, frente al Gimnasio de Promocion"
+					ubicacion: "Edificio CIDE, frente al Gimnasio de Promoción"
 					}
 				],
 				copiadoras: [

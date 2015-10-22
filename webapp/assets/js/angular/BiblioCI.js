@@ -72,7 +72,7 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
                 nombre: 'Omar Dengo',
                 CI: [
 					{
-					nombre: 'Centro de Informacin Documental (CIDCSO)',
+					nombre: 'Centro de Información Documental (CIDCSO)',
 					telefono: '22773266',
 					website: 'http://www.una.ac.cr/index.php/m-telefonos-una/centro-de-informacion-documental/',
 					img: 'assets/img/escuelas/una.png'
@@ -90,43 +90,43 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 					img: 'assets/img/escuelas/latinoamericanos.png'
 					},
 					{
-					nombre: 'Instituto de Investigacion y Servicios Forestales (INISEFOR)',
+					nombre: 'Instituto de Investigación y Servicios Forestales (INISEFOR)',
 					telefono: '25624600',
 					website: 'http://www.inisefor.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Instituto Internacional en Conservacion y Manejo de Vida Silvestre (ICOMVIS)',
+					nombre: 'Instituto Internacional en Conservación y Manejo de Vida Silvestre (ICOMVIS)',
 					telefono: '22377039',
 					website: 'http://www.icomvis.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Observatorio Vulcanologico y Sismologico de Costa Rica (OVSICORI)',
+					nombre: 'Observatorio Vulcanológico y Sismológico de Costa Rica (OVSICORI)',
 					telefono: '25624001',
 					website: 'http://www.ovsicori.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Centro de Investigaciones Apicolas Tropicales (CINAT)',
+					nombre: 'Centro de Investigaciones Apícolas Tropicales (CINAT)',
 					telefono: '22381868',
 					website: 'http://www.cinat.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Instituto Regional de Estudios en Sustancias Toxicas (IRET)',
+					nombre: 'Instituto Regional de Estudios en Sustancias Tóxicas (IRET)',
 					telefono: '22773584',
 					website: 'http://www.iret.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Instituto de Estudios Interdisciplinarios de la Ninez y la Adolescencia',
+					nombre: 'Instituto de Estudios Interdisciplinarios de la Niñez y la Adolescencia',
 					telefono: '22773475',
 					website: 'http://www.programaicat.una.ac.cr/ICATsite/index.html',
 					img: 'assets/img/escuelas/una.png'
 					},
 					{
-					nombre: 'Programa Identidad Cultural Arte y Tecnologia (ICAT)',
+					nombre: 'Programa Identidad Cultural Arte y Tecnología (ICAT)',
 					telefono: '22773475',
 					website: 'http://www.programaicat.una.ac.cr',
 					img: 'assets/img/escuelas/una.png'
@@ -134,15 +134,15 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 				],
 				Bibliotecas: [
 					{
-					nombre: "Luis y Felipe Molina (RI)",
+					nombre: "Luis Felipe Molina (RI)",
 					horario: "L-V 9am a 6pm"
 					},
 					{
-					nombre: "Biblioteca de Facultad de Filosofia y Letras",
+					nombre: "Biblioteca de Facultad de Filosofía y Letras",
 					horario: "L 8am a 5pm, M-V 8am a 6pm, S 8am a 5pm"
 					},
 					{
-					nombre: "Constantino Lascaris (Generales)",
+					nombre: "Constantino Láscaris (Generales)",
 					horario: "L, M, J y V 7am a 8pm, I 7am a 5pm"
 					},
 					{
@@ -154,7 +154,7 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 					horario: "L-V 8am a 7pm, S 8am a 4pm"
 					},
 					{
-					nombre: "Joaquin Garcia Monge",
+					nombre: "Joaquín García Monge",
 					horario: "L-V 8am a 9pm, S 8am a 5pm"
 					}
 				]
@@ -163,7 +163,7 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
                 nombre: 'Benjamin Nunez',
                 CI: [
 					{
-					nombre: 'Centro Internacional de Poltica Econmica (CINPE)',
+					nombre: 'Centro Internacional de Política Económica (CINPE)',
 					telefono: '25624300',
 					website: 'http://www.cinpe.una.ac.cr/',
 					img: 'assets/img/escuelas/una.png'
@@ -177,7 +177,7 @@ app.controller('BiblioCICtrl',['$scope', function($scope){
 				],
 				Bibliotecas: [
 					{
-					nombre: "Biblioteca Clemencia Conejo Chacon",
+					nombre: "Biblioteca Clemencia Conejo Chacón",
 					horario: "L - V de 8am a 4:30pm, S de 8am a 3pm"
 					},
 					{

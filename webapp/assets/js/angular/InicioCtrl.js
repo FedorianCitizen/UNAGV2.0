@@ -9,7 +9,7 @@ app.controller('InicioCtrl',['$scope', function($scope){
     
         $scope.campusDisponibles = [
             {
-                nombre: 'Benjamin Nunez',
+                nombre: 'Benjamín Núñez',
                 id: 'BJNNZ'
             },
             {
