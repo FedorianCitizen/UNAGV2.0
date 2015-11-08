@@ -1,0 +1,153 @@
+app.controller('BiblioCICtrl',['$scope', function($scope){
+		$scope.CIBuscado = "";
+		$scope.CIencontrado= "";
+		$scope.BiblioBuscada = "";
+		$scope.BiblioEncontrada= "";
+	
+		$scope.busquedaCI = function(){
+			if($scope.CIBuscado === "" && $scope.CIencontrado !== ""){
+					$scope.CIencontrado = "";
+					return;
+			}
+			for(var index = 0; index < $scope.campusDisponibles.length; index++){
+				 for (temp of $scope.campusDisponibles[index].CI) {
+					if(temp.nombre.match($scope.CIBuscado))
+					   $scope.CIencontrado = temp;
+				 }
+			}
+		};
+	
+		$scope.busquedaBiblio = function(){
+			if($scope.BiblioBuscada === "" && $scope.BiblioEncontrada !== ""){
+					$scope.BiblioEncontrada = "";
+					return;
+			}
+			for(var index = 0; index < $scope.campusDisponibles.length; index++){
+				 for (temp of $scope.campusDisponibles[index].Bibliotecas) {
+					 if(temp.nombre.match($scope.BiblioBuscada))
+					   $scope.BiblioEncontrada = temp;
+				 }
+			}
+		};
+		
+        $scope.campusDisponibles = [
+            {
+                nombre: 'Omar Dengo',
+                CI: [
+					{
+					nombre: 'Centro de Información Documental (CIDCSO)',
+					telefono: '22773266',
+					website: 'http://www.una.ac.cr/index.php/m-telefonos-una/centro-de-informacion-documental/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Instituto de Estudios de la Mujer',
+					telefono: '25624085',
+					website: 'http://www.iem.una.ac.cr',
+					img: 'assets/img/escuelas/mujer.png'
+					},
+					{
+					nombre: 'Instituto de Estudios Latinoamericanos',
+					telefono: '25624056',
+					website: 'http://www.idela.una.ac.cr/',
+					img: 'assets/img/escuelas/latinoamericanos.png'
+					},
+					{
+					nombre: 'Instituto de Investigación y Servicios Forestales (INISEFOR)',
+					telefono: '25624600',
+					website: 'http://www.inisefor.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Instituto Internacional en Conservación y Manejo de Vida Silvestre (ICOMVIS)',
+					telefono: '22377039',
+					website: 'http://www.icomvis.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Observatorio Vulcanológico y Sismológico de Costa Rica (OVSICORI)',
+					telefono: '25624001',
+					website: 'http://www.ovsicori.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Centro de Investigaciones Apícolas Tropicales (CINAT)',
+					telefono: '22381868',
+					website: 'http://www.cinat.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Instituto Regional de Estudios en Sustancias Tóxicas (IRET)',
+					telefono: '22773584',
+					website: 'http://www.iret.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Instituto de Estudios Interdisciplinarios de la Niñez y la Adolescencia',
+					telefono: '22773475',
+					website: 'http://www.programaicat.una.ac.cr/ICATsite/index.html',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Programa Identidad Cultural Arte y Tecnología (ICAT)',
+					telefono: '22773475',
+					website: 'http://www.programaicat.una.ac.cr',
+					img: 'assets/img/escuelas/una.png'
+					}
+				],
+				Bibliotecas: [
+					{
+					nombre: "Luis Felipe Molina (RI)",
+					horario: "L-V 9am a 6pm"
+					},
+					{
+					nombre: "Biblioteca de Facultad de Filosofía y Letras",
+					horario: "L 8am a 5pm, M-V 8am a 6pm, S 8am a 5pm"
+					},
+					{
+					nombre: "Constantino Láscaris (Generales)",
+					horario: "L, M, J y V 7am a 8pm, I 7am a 5pm"
+					},
+					{
+					nombre: "Mariana Campos (Exactas)",
+					horario: "L-V 8am a 6pm, S 8am a 4pm"
+					},
+					{
+					nombre: "CIDENAF(CIDE)",
+					horario: "L-V 8am a 7pm, S 8am a 4pm"
+					},
+					{
+					nombre: "Joaquín García Monge",
+					horario: "L-V 8am a 9pm, S 8am a 5pm"
+					}
+				]
+            },
+			{
+                nombre: 'Benjamin Nunez',
+                CI: [
+					{
+					nombre: 'Centro Internacional de Política Económica (CINPE)',
+					telefono: '25624300',
+					website: 'http://www.cinpe.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					},
+					{
+					nombre: 'Centro de Investigaciones Apícolas Tropicales (CIAT)',
+					telefono: '22773221',
+					website: 'http://www.cinat.una.ac.cr/',
+					img: 'assets/img/escuelas/una.png'
+					}
+				],
+				Bibliotecas: [
+					{
+					nombre: "Biblioteca Clemencia Conejo Chacón",
+					horario: "L - V de 8am a 4:30pm, S de 8am a 3pm"
+					},
+					{
+					nombre: "Biblioteca Escuela de Ciencias Veterinarias",
+					horario: "L - V de 8am a 4:00pm"
+					}
+				]
+            }    
+        ];
+}]);
